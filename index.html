@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Online Quiz</title>
+    <style>
+        body{
+            background-color: rgba(0,0,0,0.2);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        header{
+            height: 60vh;
+            background-image: url('images/book-books-bookshelf-159621.jpg');
+            background-size: 100% 100% ;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+
+        header .time-remaining{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .question-index{
+            width: 40px;
+            height: 40px;
+            border: solid lightgreen 1px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 5px;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            display: inline-block;
+            background-color: rgba(0,0,0,0.1);
+            margin-bottom: 5px;
+        }
+
+        .answered-question-index{
+            background-color: lightseagreen!important;
+            color: #fff;
+        }
+
+        .answers .answer{
+            padding: 10px;
+            background-color: rgba(0,0,0,0.02);
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all o.3s ease-in-out;
+            margin-bottom: 10px;
+        }
+
+        .answers .answer:hover{
+            background-color: rgba(0,0,0,0.1);
+        }
+
+        .card-question{
+            margin-bottom: 20px;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .card-question .answered-badge{
+            background-color: lightseagreen;
+            color: #fff;
+        }
+
+        .card-question-index{
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            font-size: 1.2em;
+        }
+
+        .selected-answer{
+            background-color: lightseagreen!important;
+            color: #fff;
+        }
+
+        .next-prev-questions-section .btn{
+            border-radius: 20px;
+            border: 1px solid lightseagreen;
+            color: lightseagreen;
+            transition: all 0.3s;
+            box-shadow: none;
+        }
+
+        .next-prev-questions-section .btn:focus{
+            outline: none!important;
+        }
+
+        .next-prev-questions-section .btn:hover, .next-prev-questions-section .btn:focus{
+            color: #fff;
+            background-color: lightseagreen!important;
+            box-shadow: none;
+            outline: none!important;
+        }
+
+        .time-remaining .unit-time{
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            cursor: pointer;
+            text-align: center;
+            background-color: rgba(0,0,0,0.3);
+            color: #fff;
+            width: 100px;
+            margin-right: 15px;
+        }
+
+        .time-remaining .unit-time:last-child{
+            margin-right: 0;
+        }
+
+        .unit-time .hour, .unit-time .minute, .unit-time .second{
+            font-size: 1.6em;
+        }
+
+        .scrollTop{
+            position: fixed;
+            left: 40px;
+            bottom: 40px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            background-color: lightseagreen;
+            font-size: 1.6em;
+            color: #fff;
+        }
+
+        @media(max-width: 800px){
+            header{
+                height: 50vh;
+            }
+        }
+
+        @media(max-width: 600px){
+            .scrollTop{
+                left: 15px;
+                bottom: 15px;
+            }
+            header{
+                height: 40vh;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+       <div class="row time-remaining">
+            <div class="unit-time">
+                <div class="hour">01</div>
+                <span class="font-italic">Hours</span>
+            </div>
+            <div class="unit-time">
+                <div class="minute">20</div> 
+                <span class="font-italic">Minutes</span>
+            </div>
+            <div class="unit-time">
+                <div class="second">30</div> 
+                <span class="font-italic">Seconds</span>
+            </div>
+       </div>
+       
+    </header>
+
+    <div class="container-fluid">
+        <section class="online-quiz-area">
+            <div class="row">
+                <div class="col-sm-3 pt-3">
+                    <div class="question-indexes">
+                        <span class="question-index answered-question-index">1</span>
+                        <span class="question-index answered-question-index">2</span>
+                        <span class="question-index answered-question-index">3</span>
+                        <span class="question-index answered-question-index">4</span>
+                        <span class="question-index answered-question-index">5</span>
+                        <span class="question-index answered-question-index">6</span>
+                        <span class="question-index answered-question-index">7</span>
+                        <span class="question-index answered-question-index">8</span>
+                        <span class="question-index answered-question-index">9</span>
+                        <span class="question-index answered-question-index">10</span>
+                        <span class="question-index answered-question-index">11</span>
+                        <span class="question-index answered-question-index">12</span>
+                        <span class="question-index answered-question-index">13</span>
+                        <span class="question-index answered-question-index">14</span>
+                        <span class="question-index answered-question-index">15</span>
+                        <span class="question-index">16</span>
+                        <span class="question-index">17</span>
+                        <span class="question-index">18</span>
+                        <span class="question-index">19</span>
+                        <span class="question-index">20</span>
+                        <span class="question-index">21</span>
+                        <span class="question-index">22</span>
+                        <span class="question-index">23</span>
+                        <span class="question-index">24</span>
+                        <span class="question-index">25</span>
+                        <span class="question-index">26</span>
+                        <span class="question-index">27</span>
+                        <span class="question-index">28</span>
+                        <span class="question-index">29</span>
+                        <span class="question-index">30</span>
+                    </div>
+                    
+                    <!-- <div class="time-remaining">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="unit-time">
+                                    <div class="hour">01</div>
+                                    <span class="font-italic">Hours</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="unit-time">
+                                    <div class="minute">20</div> 
+                                    <span class="font-italic">Minutes</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="unit-time">
+                                    <div class="second">30</div> 
+                                    <span class="font-italic">Seconds</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="col-sm-9 pt-3 questions-area">
+                    <div class="card card-question">
+                        <div class="card-question-index badge answered-badge">1</div>
+                        <div class="card-header">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, 
+                                    mollitia Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, mollitia.</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="row answers">
+                                <div class="col-md-6 pr-md-2">
+                                    <div class="answer selected-answer">
+                                        <strong>A.</strong> Lorem ipsum dolor sit amet.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-md-2">
+                                    <div class="answer">
+                                        <strong>B.</strong> Ipsum ipsum dolor sit amet
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pr-md-2">
+                                    <div class="answer">
+                                        <strong>C.</strong> Dolor ipsum dolor sit amet
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-md-2">
+                                    <div class="answer">
+                                        <strong>D.</strong> Consectetur ipsum dolor sit amet
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-question">
+                        <div class="card-question-index badge answered-badge">2</div>
+                        <div class="card-header">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, mollitia.
+                                    consectetur adipisicing elit, consectetur adipisicing elit, consectetur adipisicing elit,
+                                    consectetur adipisicing elit, consectetur adipisicing elit, consectetur adipisicing elit, Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, et?
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <div class="row answers">
+                                <div class="col-md-6 pr-md-2">
+                                    <div class="answer">
+                                        <strong>A.</strong> Lorem
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-md-2">
+                                    <div class="answer">
+                                        <strong>B.</strong> Ipsum
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pr-md-2">
+                                    <div class="answer selected-answer">
+                                        <strong>C.</strong> Dolor
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-md-2">
+                                    <div class="answer">
+                                        <strong>D.</strong> Consectetur
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-question">
+                        <div class="card-question-index badge answered-badge">3</div>
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-5">
+                                        <audio controls style="width: 100%">
+                                            <source src="audios/Katy Perry - Roar (Official).mp3" type="audio/ogg">
+                                            <source src="audios/Katy Perry - Roar (Official).mp3" type="audio/mpeg">
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                </div>
+                                <div class="col-md-7">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, mollitia.</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="card-body">
+                            <div class="row answers">
+                                <div class="col-md-6 pr-md-2">
+                                    <div class="answer">
+                                        <strong>A.</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                                        Iusto porro vero illum rem ratione exercitationem! Molestiae eum soluta suscipit excepturi.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-md-2">
+                                    <div class="answer selected-answer">
+                                        <strong>B.</strong> Ipsum Iusto porro vero illum rem ratione exercitationem! Molestiae eum soluta suscipit excepturi.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pr-md-2">
+                                    <div class="answer">
+                                        <strong>C.</strong> Dolor Iusto porro vero illum rem ratione exercitationem! Molestiae eum soluta suscipit excepturi.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-md-2">
+                                    <div class="answer">
+                                        <strong>D.</strong> Consectetur Iusto porro vero illum rem ratione exercitationem! Molestiae eum soluta suscipit excepturi.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-question">
+                        <div class="card-question-index badge answered-badge">4</div>
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-7">
+                                        <iframe style="width: 100%" height="330" src="https://www.youtube.com/embed/ye5lx-Aba1o" frameborder="0" 
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="col-md-5">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, mollitia.
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                        Quos repellendus placeat explicabo dolores illum voluptates iste sit corrupti porro sapiente?
+                                    </p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="card-body">
+                            <div class="row answers">
+                                <div class="col-md-6 pr-md-2">
+                                    <div class="answer">
+                                        <strong>A.</strong> Lorem
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-md-2">
+                                    <div class="answer">
+                                        <strong>B.</strong> Ipsum
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pr-md-2">
+                                    <div class="answer">
+                                        <strong>C.</strong> Dolor
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-md-2">
+                                    <div class="answer selected-answer">
+                                        <strong>D.</strong> Consectetur
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-question">
+                        <div class="card-question-index badge badge-secondary">5</div>
+                        <div class="card-header">
+                            <div class="question">
+                                <div class="row">
+                                    <div class="col-md-5 pr-2">
+                                        <img src="images/cat.png" alt="Question" class="img-fluid">
+                                    </div>
+                                    <div class="col-md-7 pl-2">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                            Ab a provident adipisci minima, voluptatem iusto. Fugiat odit tenetur nesciunt quasi?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row answers">
+                                <div class="col-md-6 pr-md-2">
+                                    <div class="answer">
+                                        <strong>A.</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, aut?
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-md-2">
+                                    <div class="answer">
+                                        <strong>B.</strong> consectetur adipisicing elit. Est, aut
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pr-md-2">
+                                    <div class="answer">
+                                        <strong>C.</strong> Dolor consectetur adipisicing elit. Est, aut
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-md-2">
+                                    <div class="answer">
+                                        <strong>D.</strong> Consectetur consectetur adipisicing elit. Est, aut
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="next-prev-questions-section" style="margin-bottom: 150px">
+            <button class="btn btn-outline-success float-right">Next questions
+                <i class="fas fa-angle-double-right"></i> 
+            </button>
+            <button class="btn btn-outline-success float-right mr-3">
+                <i class="fas fa-angle-double-left"></i>  Previous questions
+            </button>
+        </section>
+        <div class="scrollTop">
+            <i class="fas fa-chevron-up"></i>
+        </div> 
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $('.scrollTop').fadeOut(0);
+        $(() => {
+            $('.scrollTop').click(() => {
+                $('html, body').animate({ scrollTop: 0 }, 400);
+            })
+
+            $(window).scroll(() => {
+                if($(window).scrollTop() > 400) $('.scrollTop').fadeIn();
+                else $('.scrollTop').fadeOut();
+            })
+        })
+    </script>
+</body>
+</html>
