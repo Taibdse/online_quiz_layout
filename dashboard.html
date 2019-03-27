@@ -1,113 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/css/docs.theme.min.css">
     <title>Online Quiz</title>
+
     <style>
-        body{
-            background-color: rgba(0,0,0,0.3);
+        :root {
+            --main-color: #5FCF80;
+        }
+
+        body {
+            background-color: rgba(0, 0, 0, 0.1);
+            /* background-color:var(--bg-main-color); */
             font-family: 'Roboto', sans-serif;
         }
 
-        header{
-            height: 80vh;
-            background-image: url('images/book-books-bookshelf-159621.jpg');
-            background-size: 100% 100% ;
+        .text-main-color {
+            color: var(--main-color) !important;
         }
 
-        .question-index{
-            width: 40px;
-            height: 40px;
-            border: solid lightgreen 1px;
+        header {
+            height: 500px;
+            background-image: url('./images/bg1.jpg');
+            background-size: 100% 100%;
+            background-attachment: fixed;
             text-align: center;
-            line-height: 40px;
-            border-radius: 5px;
-            transition: all 0.2s ease-in-out;
-            cursor: pointer;
+            color: #fff !important;
+            position: relative;
+            margin-top: 58px;
+        }
+
+        header>div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        header .overlay {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        header .trust-quality {
+            border: 5px solid var(--main-color);
+            padding: 20px;
+            font-size: 2em;
             display: inline-block;
-            background-color: rgba(0,0,0,0.1);
-            margin-bottom: 5px;
-        }
-        .question-index:hover{
-
+            margin-top: 2em;
         }
 
-        .answered-question-index{
-            background-color: lightgreen!important;
+        header h2 {
             color: #fff;
         }
 
-        .answers .answer{
-            padding: 10px;
-            background-color: rgba(0,0,0,0.02);
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all o.2s ease-in-out;
-            margin-bottom: 10px;
+        header p {
+            color: #fff !important;
         }
 
-        .answers .answer:hover{
-            background-color: rgba(0,0,0,0.1);
-        }
-
-        .card-question{
-            margin-bottom: 20px;
-            margin-top: 10px;
-            position: relative;
-        }
-
-        .card-question-index{
-            position: absolute;
-            top: -10px;
-            left: -10px;
+        header a {
+            color: #fff;
             font-size: 1.2em;
-        }
-
-        .question-indexes{
-            /* position: fixed; */
-            
-        }
-
-        .selected-answer{
-            background-color: lightseagreen!important;
-        }
-
-        .next-prev-questions-section .btn{
-            border-radius: 20px;
-        }
-
-        .time-remaining .unit-time{
-            border: 1px solid #ccc;
+            background-color: var(--main-color);
+            display: inline-block;
+            padding: 10px;
             border-radius: 10px;
-            padding: 15px;
-            cursor: pointer;
-            text-align: center;
+            text-decoration: none;
         }
 
-        .unit-time .hour, .unit-time .minute, .unit-time .second{
-            font-size: 1.6em;
+        header a:hover {
+            text-decoration: none;
+            color: #fff;
         }
 
+        .navbar .btn-custom {
+            color: #fff;
+            font-size: 1em;
+            background: transparent;
+            border: 1px solid var(--main-color);
+            color: var(--main-color) !important;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        .navbar .navbar-toggler:hover,
+        .navbar .navbar-toggler:focus {
+            background-color: var(--main-color);
+            box-shadow: none;
+            border: none;
+            outline: none;
+            color: #fff !important;
+        }
+
+        .golden-board .card-candidate {
+            margin-bottom: 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card-candidate .card-header {
+            padding: 0;
+            max-height: 400px;
+            background-color: orange;
+            overflow: hidden;
+        }
+
+        .golden-board .card-candidate img {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .golden-board .card-candidate:hover img {
+            transform: scale(1.2);
+        }
+
+        .golden-board .card-candidate .card-body {
+            padding-top: 0px;
+        }
     </style>
 </head>
-<body>
-    
-    <header></header>
-    <div class="container-fluid">
-        
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed">
+        <a class="navbar-brand text-main-color" href="#">ONLINEQUIZ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Về cuộc thi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contestInfo">Thông tin cuộc thi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#goldenBoard">Bảng vàng</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-itme">
+                    <a class="btn-custom" href="#">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn-custom" href="#">Register</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="trust-quality">
+                CUỘC THI HƯƠNG ONLINE
+            </div>
+            <h2 class="">Hiền tài là nguyên khí quốc gia</h2>
+            <p>Cuộc thi nhằm tìm kiếm những con người vừa có đức có tài để phụng sự cho quốc gia</p>
+            <a href="" class="">Thi ngay</a>
+        </div>
+    </header>
+
+    <section id="about" class="about">
+        <h2 class="text-center text-main-color bg-white">Về cuộc thi</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-body">
+                        <p>
+                            Phần mềm này ra đời nhằm đáp ứng cho nhu cầu thi cử của nhân dan Đại Việt trong việc tiết kiệm thờ giani,
+                            công sức, tiền bạc cho những thí sinh xa nơi dự thi. Phần mềm này là ý tưởng của nhà vua và các quan triều đình
+                            đặc biệt là Lương Thế Vinh. Và kể từ nay người người
+                            có thể tham gia cuộc thi Hương tại bất cứ nơi đâu, đem tài năng của mình ra cống hiến
+                            cho đất nước.
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="goldenBoard" class="golden-board">
+        <h2 class="text-center text-main-color bg-white">Bảng vàng</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card text-white bg-danger card-candidate">
+                        <div class="card-header">
+                            <img src="./images/img_avatar.png" class="card-img-top" alt="">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-white">Bui Duc Tai</h5>
+                            <p class="card-text text-white">
+                                <span>Thu khoa ki thi Huong nam 2019</span><br>
+                                <span>Diem thi: 9</span><br>
+                                <span>Thoi gian lam: 30p 30ps</span>
+                            </p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card text-white bg-warning card-candidate">
+                        <div class="card-header">
+                            <img src="./images/avatar2.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-white">Nguyen Dinh Trong</h5>
+                            <p class="card-text text-white">
+                                <span>A khoa ki thi Huong nam 2019</span><br>
+                                <span>Diem thi: 10</span><br>
+                                <span>Thoi gian lam: 30p 30ps</span>
+                            </p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card text-white bg-warning card-candidate">
+                        <div class="card-header">
+                            <img src="./images/avatar3.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-white">Luong Xuan Truong</h5>
+                            <p class="card-text text-white">
+                                <span>Top 4 ki thi Huong nam 2019</span> <br>
+                                <span>Diem thi: 9.5</span><br>
+                                <span>Thoi gian lam: 30p 30ps</span>
+                            </p>
+
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card text-white bg-primary card-candidate">
+                        <div class="card-header">
+                            <img src="./images/avatar3.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-white">Ha Duc Chinh</h5>
+                            <p class="card-text text-white">
+                                <span>Top 4 ki thi Huong nam 2019</span> <br>
+                                <span>Diem thi: 9.5</span><br>
+                                <span>Thoi gian lam: 30p 30ps</span>
+                            </p>
+
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card text-white bg-primary card-candidate">
+                        <div class="card-header">
+                            <img src="./images/avatar3.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-white">Nguyen Quang Hai</h5>
+                            <p class="card-text text-white">
+                                <span>Top 4 ki thi Huong nam 2019</span> <br>
+                                <span>Diem thi: 9.5</span><br>
+                                <span>Thoi gian lam: 30p 30ps</span>
+                            </p>
+
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card text-white bg-primary card-candidate">
+                        <div class="card-header">
+                            <img src="./images/avatar3.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-white">Nguyen Cong Phuong</h5>
+                            <p class="card-text text-white">
+                                <span>Top 4 ki thi Huong nam 2019</span> <br>
+                                <span>Diem thi: 9.5</span><br>
+                                <span>Thoi gian lam: 30p 30ps</span>
+                            </p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card text-white bg-primary card-candidate">
+                        <div class="card-header">
+                            <img src="./images/avatar3.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-white">Dang Van Lam</h5>
+                            <p class="card-text text-white">
+                                <span>Top 4 ki thi Huong nam 2019</span> <br>
+                                <span>Diem thi: 9.5</span><br>
+                                <span>Thoi gian lam: 30p 30ps</span>
+                            </p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contestInfo" class="quiz-online-format">
+        <h2 class="text-center text-main-color bg-white">Thông tin cuộc thi</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-body">
+                        <p>
+                            Hình thức thi trắc nghiệm
+                            với 4 đá pán A,B,C,D. Người dân muốn dự thi sẽ đăng kí tài khoản, sau đó đăng nhập
+                            vào trang web cuộc thi.Sẽ có nhiều đề thi, thí sinh chỉ được chọn một đề để tiến hành
+                            phần thi của mình. Dạng câu hỏi và câu trả lời trong đề thi có thể ở dạng chữ, âm
+                            thanh, phim, hình ảnh. Sau phần làm bài thi, thí sinh có thể xem lại kết quả thi các
+                            mình, các câu đúng, các câu sai và đáp án đúng, tổng thời gian làm bài. Bảng vàng sẽ
+                            được hiển thị công khai, minh bạch trên trang nhất của cuộc thi, chứa danh sách các
+                            thí sinh điểm cao nhất đã được triều đình công nhận và chuẩn bị nhận chức.
+                        </p>
+                    </div>
+
+                    <div class="card card-body mt-3">
+                        <div>
+                            <strong>Thời gian dự thi: </strong> <span>09h30p 20/10/2019</span>
+                        </div>
+                        <div>
+                            <strong>Thời gian làm bài: </strong> <span>90p</span>
+                        </div>
+                        <div>
+                            <strong>Lĩnh vực kiến thức: </strong> <span>KHTN (Toán, lí, hóa, sinh, thiên văn học), KHXH (Văn, Sử, Địa), Lập trình (Java, .NET, Nodejs, PHP)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="onlineQuizRequest" class="online-quiz-request">
+        <h2 class="text-center text-main-color bg-white">Đăng kí thi ngay</h2>
+        <div class="container">
+            <div class=""></div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
     <script>
-        
+        $(() => {
+            $('.navbar a').click(function(){
+                let hash = $(this).attr('href');
+                let pos = $(hash).offset().top;
+                $('body, html').animate({ scrollTop: pos })
+                location.hash = hash;
+            })
+        })
     </script>
 </body>
+
 </html>
