@@ -99,23 +99,39 @@
         .modalQuestionBank .card.card-question{
             font-size: 0.8em;
             padding: 5px;
+            border: 2px solid #ccc;
+            cursor: pointer;
         }
+
+        .modalQuestionBank .card.card-question:hover{
+            background-color: rgba(0,0,0,0.1);
+        }
+
         .checkbox-select-question{
             width: 20px;
             height: 20px;
             float: right;
         }
+
         .img-question-card{
-            width: 100%;
-            min-width: 20px!important;
+            width: 90%;
             max-height: 100px;
+            /* margin-left: 10px; */
+            padding-left: 10px;
         }
+
         .selected-questions{
             border-bottom: 2px solid #ccc;
         }
+
+        .selected-card-question{
+            border:  2px solid green!important;
+        }
+
         .modalQuestion .modal-content{
             background-color: rgba(200,200,200);
         }
+
         .modal{
             overflow-y:auto;
         }
@@ -204,107 +220,184 @@
                     </div>
                     <div class="modal-body">
                         <div class="selected-questions">
-                        <h4 class="text-center font-italic">Nhung cau hoi da chon</h4>
-                          <div class="row mb-3">
+                            <h4 class="text-center font-italic">Nhung cau hoi da chon</h4>
+                            <div class="row mb-3">
                                 <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
-                                    <div class="card card-body card-question">
+                                    <div class="card card-body card-question selected-card-question">
                                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                        <div>
+                                            <input type="checkbox" checked class="checkbox-select-question float-right">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
-                                    <div class="card card-body card-question">
+                                    <div class="card card-body card-question selected-card-question">
                                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                        <div>
+                                            <input type="checkbox" checked class="checkbox-select-question float-right">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
-                                    <div class="card card-body card-question">
+                                    <div class="card card-body card-question selected-card-question">
                                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                        <div>
+                                            <input type="checkbox" checked class="checkbox-select-question float-right">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
-                                    <div class="card card-body card-question">
+                                    <div class="card card-body card-question selected-card-question">
                                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                        <div>
+                                            <input type="checkbox" checked class="checkbox-select-question float-right">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
-                                    <div class="card card-body card-question">
+                                    <div class="card card-body card-question selected-card-question">
                                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                        <div>
+                                            <input type="checkbox" checked class="checkbox-select-question float-right">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                          </div>
+                        </div>
                         <div class="question-bank mt-5">
                             <h4 class="text-center font-italic">Cac cau hoi trong ngan hang</h4>
-                           <div class="row">
+                            <div class="row">
                                 <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
-                                        <div class="card card-body card-question">
-                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                    <div class="card card-body card-question selected-card-question">
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                        <div>
+                                            <input type="checkbox" checked class="checkbox-select-question float-right">
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
-                                        <div class="card card-body card-question">
-                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                    <div class="card card-body card-question selected-card-question">
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                        <div>
+                                            <input type="checkbox" checked class="checkbox-select-question float-right">
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
-                                        <div class="card card-body card-question">
-                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                    <div class="card card-body card-question selected-card-question">
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                        <div>
+                                            <input type="checkbox" checked class="checkbox-select-question float-right">
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
-                                        <div class="card card-body card-question">
-                                            <div class="row">
-                                                <div class="col-sm-6 px-1 mb-2">
-                                                    <img src="../images/cat.png" class="img-question-card" >
-                                                </div>
-                                                <div class="col-sm-6 px-1 mb-2">
-                                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
-                                                </div>
-                                            </div><br>
-                                            <div class="clearfix"></div>
-                                            <input type="checkbox" class="checkbox-select-question">
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                    <div class="card card-body card-question selected-card-question">
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                        <div>
+                                            <input type="checkbox" checked class="checkbox-select-question float-right">
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
-                                        <div class="card card-body card-question">
-                                            <div class="row">
-                                                <div class="col-sm-5 px-1 mb-2">
-                                                    <img src="../images/cat.png" alt="" class="img-question-card">
-                                                </div>
-                                                <div class="col-sm-7 px-1 mb-2">
-                                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
-                                                </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                    <div class="card card-body card-question selected-card-question">
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                        <div>
+                                            <input type="checkbox" checked class="checkbox-select-question float-right">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                    <div class="card card-body card-question">
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                        <div>
+                                            <input type="checkbox" class="checkbox-select-question float-right">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                    <div class="card card-body card-question">
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                        <div>
+                                            <input type="checkbox" class="checkbox-select-question float-right">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                    <div class="card card-body card-question">
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                        <div>
+                                            <input type="checkbox" class="checkbox-select-question float-right">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                    <div class="card card-question">
+                                        <div class="row" >
+                                            <div class="col-5 px-1">
+                                                <img src="../images/cat.png" class="img-question-card" >
+                                            </div>
+                                            <div class="col-7 px-1">
+                                                <p>Lorem ipsum dolor sit amet consectetur,adipisic ing elit. Temporibus, ea!...</p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
-                                        <div class="card card-body card-question">
-                                            <div class="row">
-                                                <div class="col-sm-5 px-1 mb-2">
-                                                    <img src="../images/cat.png" alt="" style="width: 100%; max-height: 100px">
-                                                </div>
-                                                <div class="col-sm-7 px-1 mb-2">
-                                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
-                                                </div>
-                                            </div>
+                                        <div>
+                                            <input type="checkbox" class="checkbox-select-question float-right">
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
-                                        <div class="card card-body card-question">
-                                            <div class="row">
-                                                <div class="col-sm-5 px-1 mb-2">
-                                                    <img src="../images/cat.png" alt="" class="img-fluid">
-                                                </div>
-                                                <div class="col-sm-7 px-1 mb-2">
-                                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
-                                                </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                    <div class="card card-body card-question">
+                                        <div class="row">
+                                            <div class="col-5 px-1">
+                                                <img src="../images/cat.png" alt="" class="img-question-card">
+                                            </div>
+                                            <div class="col-7 px-1">
+                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
                                             </div>
                                         </div>
+                                        <div>
+                                            <input type="checkbox" class="checkbox-select-question float-right">
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                    <div class="card card-body card-question">
+                                        <div class="row">
+                                            <div class="col-5 px-1">
+                                                <img src="../images/cat.png" alt="" class="img-question-card">
+                                            </div>
+                                            <div class="col-7 px-1">
+                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" class="checkbox-select-question float-right">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 px-1">
+                                    <div class="card card-body card-question">
+                                        <div class="row">
+                                            <div class="col-5 px-1">
+                                                <img src="../images/cat.png" alt=""class="img-question-card">
+                                            </div>
+                                            <div class="col-7 px-1">
+                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" class="checkbox-select-question float-right">
+                                        </div>
+                                    </div>
+                                </div>
                            </div>
                            <div class="row text-center mt-3">
                                <div class="col-sm-4 mx-auto">
-                                    <button class="btn btn-block btn-outline-warning">Load more</button>
+                                    <button class="btn btn-block btn-outline-warning" id="btnLoadMoreQuestions">Load more</button>
                                </div>
                            </div>
                         </div>
@@ -357,6 +450,28 @@
     <script src="../assets/bootstrap/bootstrap.min.js"></script>
     
     <script>
+        
+        function bindEventClickOnCardBankQuestion(e){
+            var $target = $(e.target)
+            if(!$target.hasClass('checkbox-select-question')) {
+                $('#modalQuestion').modal('show');
+            } else {
+                // if($target[0].checked){
+                //     var $parent = $target.parents('.card-question');
+                //     if($parent.hasClass('selected-card-question')){
+                //         $parent.removeClass('selected-card-question');
+
+                //     } else {
+                //         $parent.addClass('selected-card-question');
+                //         var $clone = $parent.clone();
+                //         $div = $('<div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2"></div');
+                //         $div.append($clone);
+                //         $('.selected-questions').find('.row').append($div);
+                //     }
+                // }
+                
+            }
+        }
 
         $(() => {
             $('.navbar a').click(function(){
@@ -370,10 +485,39 @@
                 $('#modalQuestionBank').modal('show');
             })
 
-            $('.modalQuestionBank .card.card-question').click(function(e){
-                if($(e.target).hasClass('checkbox-select-question')) return;
-                $('#modalQuestion').modal('show');
+            $('.modalQuestionBank .card.card-question').click(bindEventClickOnCardBankQuestion)
+
+            $('#btnLoadMoreQuestions').click(function(){
+                $('#modalQuestionBank .question-bank > .row').eq(0).append(`
+                    <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                        <div class="card card-body card-question">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                            <div>
+                                <input type="checkbox" class="checkbox-select-question float-right">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                        <div class="card card-question">
+                            <div class="row" >
+                                <div class="col-5 px-1">
+                                    <img src="../images/cat.png" class="img-question-card" >
+                                </div>
+                                <div class="col-7 px-1">
+                                    <p>Lorem ipsum dolor sit amet consectetur,adipisic ing elit. Temporibus, ea!...</p>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="checkbox" class="checkbox-select-question float-right">
+                            </div>
+                        </div>
+                    </div>
+                `);
+                var $cardQuestions = $('#modalQuestionBank .question-bank > .row').eq(0).find('.card-question');
+                $cardQuestions.eq(-1).click(bindEventClickOnCardBankQuestion)
+                $cardQuestions.eq(-2).click(bindEventClickOnCardBankQuestion)
             })
+            
         })
 
     </script>
