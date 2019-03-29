@@ -54,13 +54,6 @@
             border: 5px solid var(--main-color);
             padding: 20px;
         }
-        .table thead tr th{
-            white-space: nowrap;
-        }
-        .table tbody tr td:last-child {
-            white-space: nowrap;
-        }
-
         .btn-custom {
             color: #fff;
             font-size: 1em;
@@ -107,6 +100,10 @@
             background-color: rgba(0,0,0,0.1);
         }
 
+        .modalQuestion .modal-content{
+            background-color: rgba(200,200,200);
+        }
+
         .checkbox-select-question{
             width: 20px;
             height: 20px;
@@ -128,19 +125,15 @@
             border:  2px solid green!important;
         }
 
-        .modalQuestion .modal-content{
-            background-color: rgba(200,200,200);
-        }
-
         .modal{
             overflow-y:auto;
         }
-        
+
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand text-main-color" href="#">ONLINEQUIZ</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -177,11 +170,11 @@
         </div>
     </header>
 
-    <section>
+    <section style="margin-bottom: 70px;">
        <div class="container">
            <div class="filter mt-5">
                <div class="row">
-                   <div class="col-sm-6 mx-auto">
+                   <div class="col-md-6 col-sm-8 mx-auto">
                         <div class="card">
                             <div class="card-body">
                                 <form action="">
