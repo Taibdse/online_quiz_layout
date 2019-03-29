@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/bootstrap/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     
     <title>Online Quiz</title>
@@ -28,7 +28,7 @@
 
         header {
             height: 300px;
-            background-image: url('../images/board-chalk-chalkboard-459793.jpg');
+            background-image: url('../../images/board-chalk-chalkboard-459793.jpg');
             background-size: 100% 100%;
             background-attachment: fixed;
             text-align: center;
@@ -186,21 +186,14 @@
                                     </div>
                                </div>
                            </div>
-
-
                            <div class="row">
-                               <div class="col-sm-6">
+                               <div class="col-12">
                                    <strong>Chon dap an dung</strong><br>
                                    A <input type="radio" name="right-answer" checked><br>
                                    B <input type="radio" name="right-answer"><br>
                                    C <input type="radio" name="right-answer"><br>
                                    D <input type="radio" name="right-answer"><br>
                                </div>
-                               <div class="col-sm-6">
-                                    <strong>Chon 1 file dinh kem</strong><br>
-                                    <input type="file" class="" ><br>
-                                    <small>Co the là file mp3, mp4, png, jpg, jpeg</small>
-                                </div>
                            </div>
                            <button class="btn btn-custom float-right">Tim kiem</button>
                            
@@ -212,24 +205,11 @@
        </div>
     </section>
 
-   
-
-    <script src="../assets/jquery/jquery-3.3.1.min.js"></script>
-    <script src="../assets/bootstrap/popper/popper.min.js"></script>
-    <script src="../assets/bootstrap/bootstrap.min.js"></script>
+    <script src="../../assets/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../../assets/bootstrap/popper/popper.min.js"></script>
+    <script src="../../assets/bootstrap/bootstrap.min.js"></script>
     
-    <script>
-
-        $(() => {
-            $('.navbar a').click(function(){
-                let hash = $(this).attr('href');
-                let pos = $(hash).offset().top;
-                $('body, html').animate({ scrollTop: pos })
-                location.hash = hash;
-            })
-        })
-
-    </script>
+    <script src="../../custom/js/main.js"></script>
 </body>
 
 </html>

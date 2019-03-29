@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/bootstrap/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>Online Quiz</title>
 
@@ -27,7 +27,7 @@
 
         header {
             height: 300px;
-            background-image: url('../images/board-chalk-chalkboard-459793.jpg');
+            background-image: url('../../images/board-chalk-chalkboard-459793.jpg');
             background-size: 100% 100%;
             background-attachment: fixed;
             text-align: center;
@@ -331,7 +331,7 @@
                                     <div class="card card-question">
                                         <div class="row" >
                                             <div class="col-5 px-1">
-                                                <img src="../images/cat.png" class="img-question-card" >
+                                                <img src="../../images/cat.png" class="img-question-card" >
                                             </div>
                                             <div class="col-7 px-1">
                                                 <p>Lorem ipsum dolor sit amet consectetur,adipisic ing elit. Temporibus, ea!...</p>
@@ -346,7 +346,7 @@
                                     <div class="card card-body card-question">
                                         <div class="row">
                                             <div class="col-5 px-1">
-                                                <img src="../images/cat.png" alt="" class="img-question-card">
+                                                <img src="../../images/cat.png" alt="" class="img-question-card">
                                             </div>
                                             <div class="col-7 px-1">
                                                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
@@ -361,7 +361,7 @@
                                     <div class="card card-body card-question">
                                         <div class="row">
                                             <div class="col-5 px-1">
-                                                <img src="../images/cat.png" alt="" class="img-question-card">
+                                                <img src="../../images/cat.png" alt="" class="img-question-card">
                                             </div>
                                             <div class="col-7 px-1">
                                                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
@@ -376,7 +376,7 @@
                                     <div class="card card-body card-question">
                                         <div class="row">
                                             <div class="col-5 px-1">
-                                                <img src="../images/cat.png" alt=""class="img-question-card">
+                                                <img src="../../images/cat.png" alt=""class="img-question-card">
                                             </div>
                                             <div class="col-7 px-1">
                                                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
@@ -438,10 +438,10 @@
         </div>
     </section>
 
-    <script src="../assets/jquery/jquery-3.3.1.min.js"></script>
-    <script src="../assets/bootstrap/popper/popper.min.js"></script>
-    <script src="../assets/bootstrap/bootstrap.min.js"></script>
-    
+    <script src="../../assets/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../../assets/bootstrap/popper/popper.min.js"></script>
+    <script src="../../assets/bootstrap/bootstrap.min.js"></script>
+    <script src="../../custom/js/main.js"></script>
     <script>
         
         function bindEventClickOnCardBankQuestion(e){
@@ -462,17 +462,10 @@
                 //         $('.selected-questions').find('.row').append($div);
                 //     }
                 // }
-                
             }
         }
 
         $(() => {
-            $('.navbar a').click(function(){
-                let hash = $(this).attr('href');
-                let pos = $(hash).offset().top;
-                $('body, html').animate({ scrollTop: pos })
-                location.hash = hash;
-            })
 
             $('#btnShowModalQuestionBank').click(function(){
                 $('#modalQuestionBank').modal('show');
@@ -494,7 +487,7 @@
                         <div class="card card-question">
                             <div class="row" >
                                 <div class="col-5 px-1">
-                                    <img src="../images/cat.png" class="img-question-card" >
+                                    <img src="../../images/cat.png" class="img-question-card" >
                                 </div>
                                 <div class="col-7 px-1">
                                     <p>Lorem ipsum dolor sit amet consectetur,adipisic ing elit. Temporibus, ea!...</p>

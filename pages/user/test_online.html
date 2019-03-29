@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../assets/bootstrap/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>Online Quiz</title>
     <style>
@@ -19,7 +19,7 @@
 
         header{
             height: 60vh;
-            background-image: url('images/book-books-bookshelf-159621.jpg');
+            background-image: url('../../images/book-books-bookshelf-159621.jpg');
             background-size: 100% 100% ;
             display: flex;
             justify-content: center;
@@ -445,21 +445,9 @@
         </div> 
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script>
-        $('.scrollTop').fadeOut(0);
-        $(() => {
-            $('.scrollTop').click(() => {
-                $('html, body').animate({ scrollTop: 0 }, 400);
-            })
-
-            $(window).scroll(() => {
-                if($(window).scrollTop() > 400) $('.scrollTop').fadeIn();
-                else $('.scrollTop').fadeOut();
-            })
-        })
-    </script>
+    <script src="../../assets/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../../assets/bootstrap/popper/popper.min.js"></script>
+    <script src="../../assets/bootstrap/bootstrap.min.js"></script>
+    <script src="../../custom/js/main.js"></script>
 </body>
 </html>

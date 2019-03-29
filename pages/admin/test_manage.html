@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/bootstrap/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     
     <title>Online Quiz</title>
@@ -28,7 +28,7 @@
 
         header {
             height: 300px;
-            background-image: url('../images/board-chalk-chalkboard-459793.jpg');
+            background-image: url('../../images/board-chalk-chalkboard-459793.jpg');
             background-size: 100% 100%;
             background-attachment: fixed;
             text-align: center;
@@ -101,35 +101,35 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand text-main-color" href="#">ONLINEQUIZ</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#home">Trang chủ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">Quản lý thí sinh</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contestInfo">Quản lý đê</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#goldenBoard">Danh sách bảng vàng</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-itme">
-                    <a class="btn-custom" href="#">Log out</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                <a class="navbar-brand text-main-color" href="#">ONLINEQUIZ</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./candidate_manage.html">Quản lý thí sinh</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./exam_manage.html">Quản lý kì thi</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./test_manage.html">Quản lý đề thi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./question_manage.html">Quản lý câu hỏi</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-itme">
+                            <a class="btn-custom" href="#">Log out</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
 
     <header id="home" class="">
         <div class="overlay"></div>
@@ -257,22 +257,11 @@
        </div>
     </section>
 
-    <script src="../assets/jquery/jquery-3.3.1.min.js"></script>
-    <script src="../assets/bootstrap/popper/popper.min.js"></script>
-    <script src="../assets/bootstrap/bootstrap.min.js"></script>
-    
-    <script>
+    <script src="../../assets/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../../assets/bootstrap/popper/popper.min.js"></script>
+    <script src="../../assets/bootstrap/bootstrap.min.js"></script>
+    <script src="../../custom/js/main.js"></script>
 
-        $(() => {
-            $('.navbar a').click(function(){
-                let hash = $(this).attr('href');
-                let pos = $(hash).offset().top;
-                $('body, html').animate({ scrollTop: pos })
-                location.hash = hash;
-            })
-        })
-
-    </script>
 </body>
 
 </html>
