@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Online Quiz</title>
+
+    <style>
+        :root {
+            --main-color: #5FCF80;
+        }
+
+        body {
+            background-color: rgba(0, 0, 0, 0.1);
+            /* background-color:var(--bg-main-color); */
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .text-main-color {
+            color: var(--main-color) !important;
+        }
+
+        header {
+            height: 300px;
+            background-image: url('../images/board-chalk-chalkboard-459793.jpg');
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            text-align: center;
+            color: #fff !important;
+            position: relative;
+            margin-top: 58px;
+        }
+
+        header>div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        header .overlay {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        header h2{
+            margin-top: 100px;
+            display: inline-block;
+            border: 5px solid var(--main-color);
+            padding: 20px;
+        }
+        .table thead tr th{
+            white-space: nowrap;
+        }
+        .table tbody tr td:last-child {
+            white-space: nowrap;
+        }
+
+        .btn-custom {
+            color: #fff;
+            font-size: 1em;
+            background: transparent;
+            border: 1px solid var(--main-color);
+            color: var(--main-color) !important;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        @media(max-width: 1000px){
+            .table tr td, .table tr th{
+                padding: 10px;
+                font-size: 0.9em;
+            }
+            .table tbody tr td:last-child .btn{
+                font-size: 0.9em;
+            }
+        }
+
+        @media(max-width: 700px){
+            .table tr td, .table tr th{
+                padding: 5px;
+                font-size: 0.9em;
+                border: 1px solid #ccc;
+            }
+        }
+
+        .modalQuestionBank .modal-dialog{
+            max-width: 95%!important;
+        }
+
+        .modalQuestionBank .card.card-question{
+            font-size: 0.8em;
+            padding: 5px;
+        }
+        .checkbox-select-question{
+            width: 20px;
+            height: 20px;
+            float: right;
+        }
+        .img-question-card{
+            width: 100%;
+            min-width: 20px!important;
+            max-height: 100px;
+        }
+        .selected-questions{
+            border-bottom: 2px solid #ccc;
+        }
+        .modalQuestion .modal-content{
+            background-color: rgba(200,200,200);
+        }
+        .modal{
+            overflow-y:auto;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <a class="navbar-brand text-main-color" href="#">ONLINEQUIZ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Quản lý thí sinh</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contestInfo">Quản lý đê</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#goldenBoard">Danh sách bảng vàng</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-itme">
+                    <a class="btn-custom" href="#">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="">
+        <div class="overlay"></div>
+        <div class="content">
+            <h2>Quan ly de thi</h2>
+        </div>
+    </header>
+
+    <section>
+       <div class="container">
+           <div class="filter mt-5">
+               <div class="row">
+                   <div class="col-sm-6 mx-auto">
+                        <div class="card">
+                            <div class="card-body">
+                                <form action="">
+                                    <div class="form-group">
+                                        <strong>Ten de thi</strong>
+                                        <input type="text" placeholder="Nhap ten de thi" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <strong>So cau hoi</strong>
+                                        <input type="text" placeholder="Nhap ten so luong cau hoi" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <strong>Thoi gian lam bai (phut)</strong>
+                                        <input type="text" placeholder="Nhap thoi gian lam bai" class="form-control">
+                                    </div>
+                                    <button class="btn btn-outline-success float-right ml-2">Luu</button>
+                                    <button type="button" id="btnShowModalQuestionBank" class="btn btn-outline-warning float-right">Them cau hoi</button>
+                                </form>
+                            </div>
+                        </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </section>
+
+    <section>
+        <div class="modal fade modalQuestionBank" id="modalQuestionBank" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ngan hang cau hoi</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="selected-questions">
+                        <h4 class="text-center font-italic">Nhung cau hoi da chon</h4>
+                          <div class="row mb-3">
+                                <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                    <div class="card card-body card-question">
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                    <div class="card card-body card-question">
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                    <div class="card card-body card-question">
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                    <div class="card card-body card-question">
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                    <div class="card card-body card-question">
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        <div class="question-bank mt-5">
+                            <h4 class="text-center font-italic">Cac cau hoi trong ngan hang</h4>
+                           <div class="row">
+                                <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                        <div class="card card-body card-question">
+                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                        <div class="card card-body card-question">
+                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                        <div class="card card-body card-question">
+                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                        <div class="card card-body card-question">
+                                            <div class="row">
+                                                <div class="col-sm-6 px-1 mb-2">
+                                                    <img src="../images/cat.png" class="img-question-card" >
+                                                </div>
+                                                <div class="col-sm-6 px-1 mb-2">
+                                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                                </div>
+                                            </div><br>
+                                            <div class="clearfix"></div>
+                                            <input type="checkbox" class="checkbox-select-question">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                        <div class="card card-body card-question">
+                                            <div class="row">
+                                                <div class="col-sm-5 px-1 mb-2">
+                                                    <img src="../images/cat.png" alt="" class="img-question-card">
+                                                </div>
+                                                <div class="col-sm-7 px-1 mb-2">
+                                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                        <div class="card card-body card-question">
+                                            <div class="row">
+                                                <div class="col-sm-5 px-1 mb-2">
+                                                    <img src="../images/cat.png" alt="" style="width: 100%; max-height: 100px">
+                                                </div>
+                                                <div class="col-sm-7 px-1 mb-2">
+                                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
+                                        <div class="card card-body card-question">
+                                            <div class="row">
+                                                <div class="col-sm-5 px-1 mb-2">
+                                                    <img src="../images/cat.png" alt="" class="img-fluid">
+                                                </div>
+                                                <div class="col-sm-7 px-1 mb-2">
+                                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea!...</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                           </div>
+                           <div class="row text-center mt-3">
+                               <div class="col-sm-4 mx-auto">
+                                    <button class="btn btn-block btn-outline-warning">Load more</button>
+                               </div>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Dong</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade modalQuestion" id="modalQuestion" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cau hoi</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-header bg-white">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde hic officia quae expedita animi laborum!</p>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">A. Lorem, ipsum.</li>
+                                        <li class="list-group-item">
+                                            <strong>B. Lorem, ipsum dolor.</strong>
+                                        </li>
+                                        <li class="list-group-item">C. Lorem ipsum dolor sit.</li>
+                                        <li class="list-group-item">D. Lorem ipsum dolor sit amet.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Dong</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../assets/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../assets/bootstrap/popper/popper.min.js"></script>
+    <script src="../assets/bootstrap/bootstrap.min.js"></script>
+    
+    <script>
+
+        $(() => {
+            $('.navbar a').click(function(){
+                let hash = $(this).attr('href');
+                let pos = $(hash).offset().top;
+                $('body, html').animate({ scrollTop: pos })
+                location.hash = hash;
+            })
+
+            $('#btnShowModalQuestionBank').click(function(){
+                $('#modalQuestionBank').modal('show');
+            })
+
+            $('.modalQuestionBank .card.card-question').click(function(e){
+                if($(e.target).hasClass('checkbox-select-question')) return;
+                $('#modalQuestion').modal('show');
+            })
+        })
+
+    </script>
+</body>
+
+</html>

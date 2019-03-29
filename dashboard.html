@@ -5,15 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/css/docs.theme.min.css">
+    
     <title>Online Quiz</title>
 
     <style>
@@ -33,7 +28,7 @@
 
         header {
             height: 500px;
-            background-image: url('./images/bg1.jpg');
+            background-image: url('./images/crossword-eyeglasses-eyewear-53209.jpg');
             background-size: 100% 100%;
             background-attachment: fixed;
             text-align: center;
@@ -64,10 +59,12 @@
 
         header h2 {
             color: #fff;
+            margin-top: 1.5em;
         }
 
         header p {
             color: #fff !important;
+            margin-top: 2em;
         }
 
         header a {
@@ -75,14 +72,20 @@
             font-size: 1.2em;
             background-color: var(--main-color);
             display: inline-block;
-            padding: 10px;
-            border-radius: 10px;
+            padding: 10px 30px;
+            border-radius: 20px;
             text-decoration: none;
         }
 
         header a:hover {
             text-decoration: none;
             color: #fff;
+        }
+
+        .navbar{
+            /* position: fixed;
+            top: 0;
+            left: 0; */
         }
 
         .navbar .btn-custom {
@@ -128,7 +131,7 @@
         }
 
         .golden-board .card-candidate .card-body {
-            padding-top: 0px;
+            padding-top: 10px;
         }
     </style>
 </head>
@@ -167,20 +170,22 @@
         </div>
     </nav>
 
-    <header id="home" class="">
+    <header id="home" class="home">
         <div class="overlay"></div>
         <div class="content">
             <div class="trust-quality">
                 CUỘC THI HƯƠNG ONLINE
             </div>
             <h2 class="">Hiền tài là nguyên khí quốc gia</h2>
-            <p>Cuộc thi nhằm tìm kiếm những con người vừa có đức có tài để phụng sự cho quốc gia</p>
+            <p class="">Cuộc thi nhằm tìm kiếm những con người vừa có đức có tài để phụng sự cho quốc gia</p>
             <a href="" class="">Thi ngay</a>
         </div>
     </header>
 
-    <section id="about" class="about">
-        <h2 class="text-center text-main-color bg-white">Về cuộc thi</h2>
+    <section id="about" class="about pt-5">
+        <h2 class="text-center text-main-color bg-white">
+           <i class="fas fa-graduation-cap"></i> Về cuộc thi
+        </h2>
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -199,9 +204,11 @@
         </div>
     </section>
 
-    <section id="goldenBoard" class="golden-board">
-        <h2 class="text-center text-main-color bg-white">Bảng vàng</h2>
-        <div class="container">
+    <section id="goldenBoard" class="golden-board pt-5">
+        <h2 class="text-center text-main-color bg-white">
+            <i class="fas fa-graduation-cap"></i> Bảng vàng
+        </h2>
+        <div class="container mt-5">
             <div class="row">
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="card text-white bg-danger card-candidate">
@@ -322,9 +329,11 @@
         </div>
     </section>
 
-    <section id="contestInfo" class="quiz-online-format">
-        <h2 class="text-center text-main-color bg-white">Thông tin cuộc thi</h2>
-        <div class="container">
+    <section id="contestInfo" class="quiz-online-format pt-5">
+        <h2 class="text-center text-main-color bg-white">
+            <i class="fas fa-graduation-cap"></i> Thông tin cuộc thi
+        </h2>
+        <div class="container mt-5">
             <div class="row">
                 <div class="col-12">
                     <div class="card card-body">
@@ -356,19 +365,23 @@
         </div>
     </section>
 
-    <section id="onlineQuizRequest" class="online-quiz-request">
-        <h2 class="text-center text-main-color bg-white">Đăng kí thi ngay</h2>
-        <div class="container">
-            <div class=""></div>
+    <section id="onlineQuizRequest" class="online-quiz-request pt-5">
+        <h2 class="text-center text-main-color bg-white">
+            <i class="fas fa-graduation-cap"></i> Đăng kí thi ngay
+        </h2>
+        <div class="container mt-5">
+            <div class="card card-body">
+
+            </div>
         </div>
     </section>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="./assets/jquery/jquery-3.3.1.min.js"></script>
+    <script src="./assets/bootstrap/popper/popper.min.js"></script>
+    <script src="./assets/bootstrap/bootstrap.min.js"></script>
     
     <script>
+
         $(() => {
             $('.navbar a').click(function(){
                 let hash = $(this).attr('href');
@@ -377,6 +390,7 @@
                 location.hash = hash;
             })
         })
+
     </script>
 </body>
 
