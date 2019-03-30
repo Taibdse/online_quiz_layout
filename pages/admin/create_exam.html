@@ -8,82 +8,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="../../assets/bootstrap/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="../../custom/css/admin.main.css">
     <title>Online Quiz</title>
 
     <style>
-        :root {
-            --main-color: #5FCF80;
-        }
-
-        body {
-            background-color: rgba(0, 0, 0, 0.1);
-            /* background-color:var(--bg-main-color); */
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .text-main-color {
-            color: var(--main-color) !important;
-        }
-
-        header {
-            height: 300px;
-            background-image: url('../../images/board-chalk-chalkboard-459793.jpg');
-            background-size: 100% 100%;
-            background-attachment: fixed;
-            text-align: center;
-            color: #fff !important;
-            position: relative;
-            margin-top: 58px;
-        }
-
-        header>div {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        header .overlay {
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-
-        header h2{
-            margin-top: 100px;
-            display: inline-block;
-            border: 5px solid var(--main-color);
-            padding: 20px;
-        }
-        .btn-custom {
-            color: #fff;
-            font-size: 1em;
-            background: transparent;
-            border: 1px solid var(--main-color);
-            color: var(--main-color) !important;
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 10px;
-            text-decoration: none;
-            margin-left: 10px;
-        }
-
-        @media(max-width: 1000px){
-            .table tr td, .table tr th{
-                padding: 10px;
-                font-size: 0.9em;
-            }
-            .table tbody tr td:last-child .btn{
-                font-size: 0.9em;
-            }
-        }
-
-        @media(max-width: 700px){
-            .table tr td, .table tr th{
-                padding: 5px;
-                font-size: 0.9em;
-                border: 1px solid #ccc;
-            }
-        }
 
         .modalQuestionBank .modal-dialog{
             max-width: 95%!important;
@@ -133,40 +61,40 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand text-main-color" href="#">ONLINEQUIZ</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#home">Trang chủ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">Quản lý thí sinh</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contestInfo">Quản lý đê</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#goldenBoard">Danh sách bảng vàng</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-itme">
-                    <a class="btn-custom" href="#">Log out</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                <a class="navbar-brand text-main-color" href="#">ONLINEQUIZ</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./candidate_manage.html">Quản lý thí sinh</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./exam_manage.html">Quản lý kì thi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./test_manage.html">Quản lý đề thi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./question_manage.html">Ngân hàng câu hỏi</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-itme">
+                            <a class="btn-custom" href="./login.html">Đăng xuất</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
 
     <header id="home" class="">
         <div class="overlay"></div>
         <div class="content">
-            <h2>Quan ly de thi</h2>
+            <h2>Tạo đề thi</h2>
         </div>
     </header>
 
@@ -179,19 +107,23 @@
                             <div class="card-body">
                                 <form action="">
                                     <div class="form-group">
-                                        <strong>Ten de thi</strong>
-                                        <input type="text" placeholder="Nhap ten de thi" class="form-control">
+                                        <strong>Tên đề thi</strong>
+                                        <input type="text" placeholder="Nhập tên đề thi" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <strong>So cau hoi</strong>
-                                        <input type="text" placeholder="Nhap ten so luong cau hoi" class="form-control">
+                                        <strong>Năm thi</strong>
+                                        <input type="text" placeholder="Nhập năm thi" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <strong>Thoi gian lam bai (phut)</strong>
-                                        <input type="text" placeholder="Nhap thoi gian lam bai" class="form-control">
+                                        <strong>Số câu hỏi</strong>
+                                        <input type="text" placeholder="Nhap số lượng câu hỏi" class="form-control">
                                     </div>
-                                    <button class="btn btn-outline-success float-right ml-2">Luu</button>
-                                    <button type="button" id="btnShowModalQuestionBank" class="btn btn-outline-warning float-right">Them cau hoi</button>
+                                    <div class="form-group">
+                                        <strong>Thời gian làm bài (phút)</strong>
+                                        <input type="text" placeholder="Nhập thòi gian làm bài" class="form-control">
+                                    </div>
+                                    <button class="btn btn-outline-success float-right ml-2">Lưu</button>
+                                    <button type="button" id="btnShowModalQuestionBank" class="btn btn-outline-warning float-right">Thêm câu hỏi</button>
                                 </form>
                             </div>
                         </div>
@@ -206,14 +138,14 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ngan hang cau hoi</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Ngân hàng câu hỏi</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="selected-questions">
-                            <h4 class="text-center font-italic">Nhung cau hoi da chon</h4>
+                            <h4 class="text-center font-italic">Những câu hỏi đã chọn</h4>
                             <div class="row mb-3">
                                 <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
                                     <div class="card card-body card-question selected-card-question">
@@ -258,7 +190,7 @@
                             </div>
                         </div>
                         <div class="question-bank mt-5">
-                            <h4 class="text-center font-italic">Cac cau hoi trong ngan hang</h4>
+                            <h4 class="text-center font-italic">Các câu hỏi trong ngân hàng</h4>
                             <div class="row">
                                 <div class="col-lg-3 col-md-4 col-sm-6 px-1 mb-2">
                                     <div class="card card-body card-question selected-card-question">
@@ -390,13 +322,13 @@
                            </div>
                            <div class="row text-center mt-3">
                                <div class="col-sm-4 mx-auto">
-                                    <button class="btn btn-block btn-outline-warning" id="btnLoadMoreQuestions">Load more</button>
+                                    <button class="btn btn-block btn-outline-warning" id="btnLoadMoreQuestions">Hiển thị thêm câu hỏi khác</button>
                                </div>
                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Dong</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
                     </div>
                 </div>
             </div>
@@ -406,7 +338,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Cau hoi</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Câu hỏi</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -431,7 +363,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Dong</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
                     </div>
                 </div>
             </div>

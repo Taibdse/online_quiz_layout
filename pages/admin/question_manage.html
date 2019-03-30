@@ -8,130 +8,47 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="../../assets/bootstrap/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    
+    <link rel="stylesheet" href="../../custom/css/admin.main.css"> 
     <title>Online Quiz</title>
 
-    <style>
-        :root {
-            --main-color: #5FCF80;
-        }
-
-        body {
-            background-color: rgba(0, 0, 0, 0.1);
-            /* background-color:var(--bg-main-color); */
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .text-main-color {
-            color: var(--main-color) !important;
-        }
-
-        header {
-            height: 300px;
-            background-image: url('../../images/board-chalk-chalkboard-459793.jpg');
-            background-size: 100% 100%;
-            background-attachment: fixed;
-            text-align: center;
-            color: #fff !important;
-            position: relative;
-            margin-top: 58px;
-        }
-
-        header>div {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        header .overlay {
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-
-        header h2{
-            margin-top: 100px;
-            display: inline-block;
-            border: 5px solid var(--main-color);
-            padding: 20px;
-        }
-        .table thead tr th{
-            white-space: nowrap;
-        }
-        .table tbody tr td:last-child {
-            white-space: nowrap;
-        }
-
-        .btn-custom {
-            color: #fff;
-            font-size: 1em;
-            background: transparent;
-            border: 1px solid var(--main-color);
-            color: var(--main-color) !important;
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 10px;
-            text-decoration: none;
-            margin-left: 10px;
-        }
-
-        @media(max-width: 1000px){
-            .table tr td, .table tr th{
-                padding: 10px;
-                font-size: 0.9em;
-            }
-            .table tbody tr td:last-child .btn{
-                font-size: 0.9em;
-            }
-        }
-
-        @media(max-width: 700px){
-            .table tr td, .table tr th{
-                padding: 5px;
-                font-size: 0.9em;
-                border: 1px solid #ccc;
-            }
-        }
-
-
-    </style>
+   
 </head>
 
 <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-                <a class="navbar-brand text-main-color" href="#">ONLINEQUIZ</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-        
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="./candidate_manage.html">Quản lý thí sinh</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./exam_manage.html">Quản lý kì thi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./test_manage.html">Quản lý đề thi</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="./question_manage.html">Quản lý câu hỏi</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-itme">
-                            <a class="btn-custom" href="#">Log out</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            <a class="navbar-brand text-main-color" href="#">ONLINEQUIZ</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./candidate_manage.html">Quản lý thí sinh</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./exam_manage.html">Quản lý kì thi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./test_manage.html">Quản lý đề thi</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./question_manage.html">Ngân hàng câu hỏi</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-itme">
+                        <a class="btn-custom" href="./login.html">Đăng xuất</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
     <header id="home" class="">
         <div class="overlay"></div>
         <div class="content">
-            <h2>Quan ly de thi</h2>
+            <h2>Ngân hàng câu hỏi</h2>
         </div>
     </header>
 
@@ -143,28 +60,29 @@
                        <div class="row">
                            <div class="col-8">
                                 <h4 class="text-main-color">
-                                    <i class="fas fa-filter"></i> Lọc de thi
+                                    <i class="fas fa-filter"></i> Tìm kiếm theo từ khóa
                                 </h4>
                            </div>
                            <div class="col-4">
-                               <button class="btn btn-custom float-right">Tao de thi moi</button>
+                               <a class="btn btn-custom float-right" href="./create_question.html">Tao câu hỏi mới</a>
                            </div>
                        </div>
                    </div>
                    <div class="card-body">
                        <div class="row">
-                            <div class="col-sm-4">
-                                <strong>theo nam</strong>
-                                <select name="" class="form-control">
-                                    <option value="">2009</option>
-                                    <option value="">2010</option>
-                                    <option value="">2011</option>
-                                </select>
-                            </div>
-                       </div>
-                       <div class="row mt-3">
-                           <div class="col-12">
-                                <button class="btn btn-custom float-right">Tim kiem</button>
+                           <div class="col-sm-6 mx-auto">
+                                <div class="input-group mb-3">
+                                    <!-- <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-search"></i>
+                                        </span>
+                                    </div> -->
+                                    <input type="text" class="form-control" placeholder="Nhập thông tin câu hỏi... ">
+                                    <div class="input-group-append">
+                                        <!-- <span class="input-group-text">.00</span> -->
+                                        <button class="btn btn-outline-success">Tìm kiếm</button>
+                                    </div>
+                                </div>
                            </div>
                        </div>
                    </div>
@@ -172,43 +90,60 @@
            </div>
            <div class="table-responsive my-5">
                 <table class="table table-striped table-hover table-condensed">
-                    <thead>
-                        <tr>
-                            <th>*</th>
-                            <th>De</th>
-                            <th>Tong diem</th>
-                            <th>Thoi gian lam</th>
-                            <th>So cau hoi</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>A</td>
-                            <td>100</td>
-                            <td>90p</td>
-                            <td>30</td>
-                            <td>
-                                <button class="btn btn-sm btn-danger">xoa</button>
-                                <button class="btn btn-sm btn-info">cap nhat</button>
-                                <button class="btn btn-sm btn-warning">Cau hoi</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>B</td>
-                            <td>200</td>
-                            <td>60p</td>
-                            <td>60</td>
-                            <td>
-                                <button class="btn btn-sm btn-danger">xoa</button>
-                                <button class="btn btn-sm btn-info">cap nhat</button>
-                                <button class="btn btn-sm btn-warning">Cau hoi</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                        <thead>
+                            <tr>
+                                <th>*</th>
+                                <th>Câu hỏi</th>
+                                <th>Đáp án đúng</th>
+                                <th>Đáp án A</th>
+                                <th>Đáp án B</th>
+                                <th>Đáp án C</th>
+                                <th>Đáp án D</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, corrupti?</td>
+                                <td>Ipsum dolor sit.</td>
+                                <td>Lorem ipsum dolor.</td>
+                                <td>Lorem ipsum sit.</td>
+                                <td>Lorem dolor sit.</td>
+                                <td>Ipsum dolor sit.</td>
+                                <td>
+                                    <button class="btn btn-sm btn-danger">xóa</button>
+                                    <a class="btn btn-sm btn-info" href="./edit_question.html">cập nhật</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, corrupti?</td>
+                                <td>Ipsum dolor sit.</td>
+                                <td>Lorem ipsum dolor.</td>
+                                <td>Lorem ipsum sit.</td>
+                                <td>Lorem dolor sit.</td>
+                                <td>Ipsum dolor sit.</td>
+                                <td>
+                                    <button class="btn btn-sm btn-danger">xóa</button>
+                                    <a class="btn btn-sm btn-info" href="./edit_question.html">cập nhật</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, corrupti?</td>
+                                <td>Ipsum dolor sit.</td>
+                                <td>Lorem ipsum dolor.</td>
+                                <td>Lorem ipsum sit.</td>
+                                <td>Lorem dolor sit.</td>
+                                <td>Ipsum dolor sit.</td>
+                                <td>
+                                        <button class="btn btn-sm btn-danger">xóa</button>
+                                        <button class="btn btn-sm btn-info">cập nhật</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
            </div>
            
        </div>

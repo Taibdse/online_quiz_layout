@@ -8,131 +8,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="../../assets/bootstrap/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    
+    <link rel="stylesheet" href="../../custom/css/main.css">
+    <link rel="stylesheet" href="../../custom/css/dashboard.css">
     <title>Online Quiz</title>
-
     <style>
-        :root {
-            --main-color: #5FCF80;
-        }
-
-        body {
-            background-color: rgba(0, 0, 0, 0.1);
-            /* background-color:var(--bg-main-color); */
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .text-main-color {
-            color: var(--main-color) !important;
-        }
-
-        header {
-            height: 500px;
-            background-image: url('../../images/crossword-eyeglasses-eyewear-53209.jpg');
-            background-size: 100% 100%;
-            background-attachment: fixed;
-            text-align: center;
-            color: #fff !important;
-            position: relative;
-            margin-top: 58px;
-        }
-
-        header>div {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        header .overlay {
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-
-        header .trust-quality {
-            border: 5px solid var(--main-color);
-            padding: 20px;
-            font-size: 2em;
-            display: inline-block;
-            margin-top: 2em;
-        }
-
-        header h2 {
-            color: #fff;
-            margin-top: 1.5em;
-        }
-
-        header p {
-            color: #fff !important;
-            margin-top: 2em;
-        }
-
-        header a {
-            color: #fff;
-            font-size: 1.2em;
-            background-color: var(--main-color);
-            display: inline-block;
-            padding: 10px 30px;
-            border-radius: 20px;
-            text-decoration: none;
-        }
-
-        header a:hover {
-            text-decoration: none;
-            color: #fff;
-        }
-
-        .navbar{
-            /* position: fixed;
-            top: 0;
-            left: 0; */
-        }
-
-        .navbar .btn-custom {
-            color: #fff;
-            font-size: 1em;
-            background: transparent;
-            border: 1px solid var(--main-color);
-            color: var(--main-color) !important;
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 10px;
-            text-decoration: none;
-            margin-left: 10px;
-        }
-
-        .navbar .navbar-toggler:hover,
-        .navbar .navbar-toggler:focus {
-            background-color: var(--main-color);
-            box-shadow: none;
-            border: none;
-            outline: none;
-            color: #fff !important;
-        }
-
-        .golden-board .card-candidate {
-            margin-bottom: 20px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .card-candidate .card-header {
-            padding: 0;
-            max-height: 400px;
-            background-color: orange;
-            overflow: hidden;
-        }
-
-        .golden-board .card-candidate img {
-            transition: all 0.3s ease-in-out;
-        }
-
-        .golden-board .card-candidate:hover img {
-            transform: scale(1.2);
-        }
-
-        .golden-board .card-candidate .card-body {
-            padding-top: 10px;
-        }
+       
     </style>
 </head>
 
@@ -163,11 +43,14 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-itme">
-                    <a class="btn-custom" href="#">Đăng nhập</a>
+                <!-- <li class="nav-itme">
+                    <a class="btn-custom" href="./login.html">Đăng nhập</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn-custom" href="#">Đăng kí</a>
+                    <a class="btn-custom" href="./register.html">Đăng kí</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="btn-custom" href="./test_result.html">Xem kết quả bài làm</a>
                 </li>
             </ul>
         </div>
@@ -181,7 +64,7 @@
             </div>
             <h2 class="">Hiền tài là nguyên khí quốc gia</h2>
             <p class="">Cuộc thi nhằm tìm kiếm những con người vừa có đức có tài để phụng sự cho quốc gia</p>
-            <a href="#testOnlineNow" >Xem thông tin kì thi</a>
+            <a href="#contestInfo" >Xem thông tin kì thi</a>
         </div>
     </header>
 
@@ -208,9 +91,35 @@
 
     <section id="goldenBoard" class="golden-board pt-5">
         <h2 class="text-center text-main-color bg-white">
-            <i class="fas fa-graduation-cap"></i> Bảng vàng
+            <i class="fas fa-graduation-cap"></i> Bảng vàng qua từng năm
         </h2>
         <div class="container mt-5">
+            <div class="row mb-3">
+                <div class="col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-user-graduate"></i>
+                                </span>
+                            </div>
+                            <select id="" class="form-control">
+                                <option value="">2009</option>
+                                <option value="">2010</option>
+                                <option value="">2011</option>
+                                <option value="">2012</option>
+                                <option value="">2013</option>
+                                <option value="">2014</option>
+                            </select>
+                            <div class="input-group-append">
+                                <!-- <span class="input-group-text"> -->
+                                    <button class="btn btn-outline-success">Tim kiếm</button>
+                                <!-- </span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="card text-white bg-danger card-candidate">
@@ -224,7 +133,6 @@
                                 <span>Diem thi: 9</span><br>
                                 <span>Thoi gian lam: 30p 30ps</span>
                             </p>
-                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                         </div>
                     </div>
                 </div>
@@ -387,6 +295,10 @@
             </div>
         </div>
     </section>
+
+    <div class="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </div> 
 
     <script src="../../assets/jquery/jquery-3.3.1.min.js"></script>
     <script src="../../assets/bootstrap/popper/popper.min.js"></script>

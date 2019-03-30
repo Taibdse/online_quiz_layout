@@ -1,0 +1,51 @@
+:root {
+    --main-color: #5FCF80;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.1);
+    /* background-color:var(--bg-main-color); */
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-control:focus{
+    box-shadow: none;
+    border: 1px solid green;
+}
+
+.text-main-color {
+    color: var(--main-color) !important;
+}
+
+
+
+@media (max-width: 992px) {  
+    .navbar .btn-custom {
+        margin-left: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+.navbar .navbar-toggler:hover,
+.navbar .navbar-toggler:focus {
+    background-color: var(--main-color);
+    box-shadow: none;
+    border: none;
+    outline: none;
+    color: #fff !important;
+}
+
+.scrollTop{
+    position: fixed;
+    left: 40px;
+    bottom: 40px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    background-color: lightseagreen;
+    font-size: 1.6em;
+    color: #fff;
+}

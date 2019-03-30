@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="../../assets/bootstrap/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    
+    <link rel="stylesheet" href="../../custom/css/admin.main.css">
     <title>Online Quiz</title>
 
-    <style>
+    <!-- <style>
         :root {
             --main-color: #5FCF80;
         }
@@ -94,44 +94,44 @@
         }
 
 
-    </style>
+    </style> -->
 </head>
 
 <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-                <a class="navbar-brand text-main-color" href="#">ONLINEQUIZ</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-        
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="./candidate_manage.html">Quản lý thí sinh</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="./exam_manage.html">Quản lý kì thi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./test_manage.html">Quản lý đề thi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./question_manage.html">Quản lý câu hỏi</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-itme">
-                            <a class="btn-custom" href="#">Log out</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            <a class="navbar-brand text-main-color" href="#">ONLINEQUIZ</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./candidate_manage.html">Quản lý thí sinh</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./exam_manage.html">Quản lý kì thi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./test_manage.html">Quản lý đề thi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./question_manage.html">Ngân hàng câu hỏi</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-itme">
+                        <a class="btn-custom" href="./login.html">Đăng xuất</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
     <header id="home" class="">
         <div class="overlay"></div>
         <div class="content">
-            <h2>Quan ly de thi</h2>
+            <h2>Quản lý đề thi</h2>
         </div>
     </header>
 
@@ -143,29 +143,31 @@
                        <div class="row">
                            <div class="col-8">
                                 <h4 class="text-main-color">
-                                    <i class="fas fa-filter"></i> Lọc de thi
+                                    <i class="fas fa-filter"></i> Lọc đề thi
                                 </h4>
                            </div>
                            <div class="col-4">
-                               <button class="btn btn-custom float-right">Tao de thi moi</button>
+                               <button class="btn btn-custom float-right">Tạo đề thi mới</button>
                            </div>
                        </div>
                    </div>
                    <div class="card-body">
                        <div class="row">
-                            <div class="col-sm-4">
-                                <strong>theo nam</strong>
-                                <select name="" class="form-control">
-                                    <option value="">2009</option>
-                                    <option value="">2010</option>
-                                    <option value="">2011</option>
-                                </select>
+                            <div class="col-sm-4 mx-auto">
+                                <strong>theo năm</strong>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-search"></i>
+                                        </span>
+                                    </div>
+                                    <select name="" class="form-control">
+                                        <option value="">2009</option>
+                                        <option value="">2010</option>
+                                        <option value="">2011</option>
+                                    </select>
+                                </div>
                             </div>
-                       </div>
-                       <div class="row mt-3">
-                           <div class="col-12">
-                                <button class="btn btn-custom float-right">Tim kiem</button>
-                           </div>
                        </div>
                    </div>
                </div>
@@ -175,10 +177,10 @@
                     <thead>
                         <tr>
                             <th>*</th>
-                            <th>De</th>
-                            <th>Tong diem</th>
-                            <th>Thoi gian lam</th>
-                            <th>So cau hoi</th>
+                            <th>Đề</th>
+                            <th>Tổng diểm</th>
+                            <th>Thời gian làm</th>
+                            <th>Số câu hỏi</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -190,9 +192,9 @@
                             <td>90p</td>
                             <td>30</td>
                             <td>
-                                <button class="btn btn-sm btn-danger">xoa</button>
-                                <button class="btn btn-sm btn-info">cap nhat</button>
-                                <button class="btn btn-sm btn-warning">Cau hoi</button>
+                                <button class="btn btn-sm btn-danger">xóa</button>
+                                <button class="btn btn-sm btn-info">cập nhật</button>
+                                <a href="./test_manage.html" class="btn btn-sm btn-warning">Câu hỏi</a>
                             </td>
                         </tr>
                         <tr>
@@ -202,9 +204,9 @@
                             <td>60p</td>
                             <td>60</td>
                             <td>
-                                <button class="btn btn-sm btn-danger">xoa</button>
-                                <button class="btn btn-sm btn-info">cap nhat</button>
-                                <button class="btn btn-sm btn-warning">Cau hoi</button>
+                                    <button class="btn btn-sm btn-danger">xóa</button>
+                                    <button class="btn btn-sm btn-info">cập nhật</button>
+                                    <a href="./test_manage.html" class="btn btn-sm btn-warning">Câu hỏi</a>
                             </td>
                         </tr>
                     </tbody>

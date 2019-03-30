@@ -8,128 +8,41 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="../../assets/bootstrap/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    
+    <link rel="stylesheet" href="../../custom/css/admin.main.css">
     <title>Online Quiz</title>
-
-    <style>
-        :root {
-            --main-color: #5FCF80;
-        }
-
-        body {
-            background-color: rgba(0, 0, 0, 0.1);
-            /* background-color:var(--bg-main-color); */
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .text-main-color {
-            color: var(--main-color) !important;
-        }
-
-        header {
-            height: 300px;
-            background-image: url('../../images/board-chalk-chalkboard-459793.jpg');
-            background-size: 100% 100%;
-            background-attachment: fixed;
-            text-align: center;
-            color: #fff !important;
-            position: relative;
-            margin-top: 58px;
-        }
-
-        header>div {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        header .overlay {
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-
-        header h2{
-            margin-top: 100px;
-            display: inline-block;
-            border: 5px solid var(--main-color);
-            padding: 20px;
-        }
-        .table thead tr th{
-            white-space: nowrap;
-        }
-        .table tbody tr td:last-child {
-            white-space: nowrap;
-        }
-
-        .btn-custom {
-            color: #fff;
-            font-size: 1em;
-            background: transparent;
-            border: 1px solid var(--main-color);
-            color: var(--main-color) !important;
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 10px;
-            text-decoration: none;
-            margin-left: 10px;
-        }
-
-        @media(max-width: 1000px){
-            .table tr td, .table tr th{
-                padding: 10px;
-                font-size: 0.9em;
-            }
-            .table tbody tr td:last-child .btn{
-                font-size: 0.9em;
-            }
-        }
-
-        @media(max-width: 700px){
-            .table tbody tr td:last-child .btn{
-                padding: 5px;
-            }
-            .table tr td, .table tr th{
-                padding: 3px;
-                font-size: 0.8em;
-                border: 1px solid #ccc;
-            }
-        }
-
-
-    </style>
+    
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand text-main-color" href="#">ONLINEQUIZ</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#home">Trang chủ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">Quản lý thí sinh</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contestInfo">Quản lý đê</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#goldenBoard">Danh sách bảng vàng</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-itme">
-                    <a class="btn-custom" href="#">Log out</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                <a class="navbar-brand text-main-color" href="#">ONLINEQUIZ</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./candidate_manage.html">Quản lý thí sinh</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./exam_manage.html">Quản lý kì thi</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./test_manage.html">Quản lý đề thi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./question_manage.html">Ngân hàng câu hỏi</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-itme">
+                            <a class="btn-custom" href="./login.html">Đăng xuất</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
 
     <header id="home" class="">
         <div class="overlay"></div>

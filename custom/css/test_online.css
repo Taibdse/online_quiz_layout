@@ -1,0 +1,67 @@
+:root{
+    --bg-main-color: ''
+}
+
+body{
+    background-color: rgba(0,0,0,0.2);
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    height: 60vh;
+    background-image: url('../../images/book-books-bookshelf-159621.jpg');
+    background-size: 100% 100% ;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+header .time-remaining{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.next-prev-questions-section .btn{
+    border-radius: 20px;
+    border: 1px solid lightseagreen;
+    color: lightseagreen;
+    transition: all 0.3s;
+    box-shadow: none;
+}
+
+.next-prev-questions-section .btn:focus{
+    outline: none!important;
+}
+
+.next-prev-questions-section .btn:hover, .next-prev-questions-section .btn:focus{
+    color: #fff;
+    background-color: lightseagreen!important;
+    box-shadow: none;
+    outline: none!important;
+}
+
+.time-remaining .unit-time{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgba(0,0,0,0.3);
+    color: #fff;
+    width: 100px;
+    margin-right: 15px;
+}
+
+.time-remaining .unit-time:last-child{
+    margin-right: 0;
+}
+
+.unit-time .hour, .unit-time .minute, .unit-time .second{
+    font-size: 1.6em;
+}
+
+
+
+
